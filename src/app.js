@@ -1,11 +1,23 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+let who = ["El perro", "Mi abuela ", "El cartero", "Mi pájaro"];
+let action = ["comió", "orinó", "aplastó", "rompió"];
+let what = ["mi tarea", "mi movil", "mi coche"];
+let when = [
+  "antes de la clase",
+  "mientras dormía",
+  "mientras hacía ejercicio",
+  "durante mi almuerzo",
+  "mientras estaba orando"
+];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+function fraseAletoria() {
+  let person = Math.floor(Math.random() * who.length);
+  let accion = Math.floor(Math.random() * action.length);
+  let que = Math.floor(Math.random() * what.length);
+  let cuando = Math.floor(Math.random() * when.length);
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+  return (
+    who[person] + " " + action[accion] + " " + what[que] + " " + when[cuando]
+  );
+}
+
+document.getElementById("excuse").innerHTML = fraseAletoria();
